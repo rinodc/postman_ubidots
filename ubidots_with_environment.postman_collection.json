@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "fbfb7330-f9e0-4678-8801-8c807acd7a4f",
+		"name": "ubidots_with_environment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "send_data_1_variable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":35.8}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":41,\"kelembaban\":9}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable_w_timestamps",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":{\"value\": 33.1,\"timestamp\": 1598596200000},\"kelembaban\": {\"value\": 78.9,\"timestamp\": 1598596200000}}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable_timestamps _gps_coordinate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suhu\": {\n        \"value\": 32.1,\n        \"timestamp\": 1599377788000\n    },\n    \"kelembaban\": {\n        \"value\": 75.2,\n        \"timestamp\": 1599377788000\n    },\n    \"position\":{\n        \"value\":1,\n        \"context\": {\n            \"lat\":-7.800245,\n            \"lng\":110.264890\n        } ,\n        \"timestamp\": 1599377788000\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_3_variable_timestamps _gps_coordinate_using_runner",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suhu\": {\n        \"value\": {{suhu}},\n        \"timestamp\": {{timestamp}}000\n    },\n    \"kelembaban\": {\n        \"value\": {{kelembaban}},\n        \"timestamp\": {{timestamp}}000\n    },\n    \"tekanan\": {\n        \"value\": {{tekanan}},\n        \"timestamp\": {{timestamp}}000\n    },\n    \"position\":{\n        \"value\":1,\n        \"context\": {\n            \"lat\":-7.800245,\n            \"lng\":110.264890\n        } ,\n        \"timestamp\": {{timestamp}}000\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_data_1_variable",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}/suhu/values",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}",
+						"suhu",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_1_variable",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}/suhu/lv",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}",
+						"suhu",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_switch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}/switch/lv",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}",
+						"switch",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_volume",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://{{baseUrl}}/api/v1.6/devices/{{device}}/volume/lv",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"{{device}}",
+						"volume",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d9ea61f7-22d4-467a-aaf9-043137cce988",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d115a80d-f58f-47e5-a238-30babd9c1667",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "910b1625-be6c-46b7-a46a-02b90a4f4877",
+		"name": "ubidots",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "send_data_1_variable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "things.ubidots.com",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":35.8}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "things.ubidots.com",
+						"type": "text"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":41,\"kelembaban\":9}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable_w_timestamps",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"suhu\":{\"value\": 33.1,\"timestamp\": 1598596200000},\"kelembaban\": {\"value\": 78.9,\"timestamp\": 1598596200000}}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_data_2_variable_timestamps _gps_coordinate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suhu\": {\n        \"value\": 32.1,\n        \"timestamp\": 1599377788000\n    },\n    \"kelembaban\": {\n        \"value\": 75.2,\n        \"timestamp\": 1599377788000\n    },\n    \"position\":{\n        \"value\":1,\n        \"context\": {\n            \"lat\":-7.800245,\n            \"lng\":110.264890\n        } ,\n        \"timestamp\": 1599377788000\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_data_1_variable",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32/suhu/values",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32",
+						"suhu",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_1_variable",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32/suhu/lv",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32",
+						"suhu",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_switch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32/switch/lv",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32",
+						"switch",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lastest_data_volume",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "things.ubidots.com"
+					},
+					{
+						"key": "X-Auth-Token",
+						"type": "text",
+						"value": "BBFF-uwSPXtKwNwzExj9ewsZfKW0MuAI36X"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://things.ubidots.com/api/v1.6/devices/esp32/volume/lv",
+					"protocol": "http",
+					"host": [
+						"things",
+						"ubidots",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.6",
+						"devices",
+						"esp32",
+						"volume",
+						"lv"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
